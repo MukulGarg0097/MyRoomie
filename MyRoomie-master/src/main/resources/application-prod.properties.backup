@@ -1,0 +1,19 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/myRommie
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+server.port=8090
+
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.ddl-auto=update
+
+com.cloudinary.cloud_name=${CLOUDINARY_CLOUD_NAME}
+com.cloudinary.api_key=${CLOUDINARY_API_KEY}
+com.cloudinary.api_secret=${CLOUDINARY_API_SECRET}
+com.cloudinary.bucket_name=${CLOUDINARY_BUCKET_NAME}
+
+#Cloudinary Configurations
+
+com.razorpaykey_id=${RAZORPAY_KEY_ID}
+com.razorpaysecretKey=${RAZORPAY_SECRET_KEY}
+
+com.googlemaps.ApiKey=${GOOGLE_MAPS_API_KEY}

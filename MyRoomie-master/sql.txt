@@ -1,0 +1,259 @@
+#Create DataBase myRoomie
+CREATE DATABASE `myRoomie` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+#Address Entity
+CREATE TABLE `address_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `city` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `flat_no` varchar(255) DEFAULT NULL,
+  `house_no` varchar(255) DEFAULT NULL,
+  `landmark` varchar(255) DEFAULT NULL,
+  `latitude` double DEFAULT NULL,
+  `locality` varchar(255) DEFAULT NULL,
+  `longitude` double DEFAULT NULL,
+  `pincode` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+#Charges Entity
+CREATE TABLE `charges_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `charge_amount` double DEFAULT NULL,
+  `charge_name` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `FK15wt9xjepps6968vrrlpddk3y` (`room_id`),
+  CONSTRAINT `FK15wt9xjepps6968vrrlpddk3y` FOREIGN KEY (`room_id`) REFERENCES `room_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+#Contact Us Entity
+CREATE TABLE `contact_us` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `email` varchar(255) DEFAULT NULL,
+  `message` varchar(1000) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `da` varchar(1000) DEFAULT 'sdd',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+#Coupon Code Entity
+CREATE TABLE `coupon_code_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `coupon_code_name` varchar(255) DEFAULT NULL,
+  `discount_percentage` int(11) DEFAULT NULL,
+  `expiry_date` datetime DEFAULT NULL,
+  `is_active` bit(1) DEFAULT b'0',
+  `is_expired` bit(1) DEFAULT b'1',
+  `start_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_j7f4hdp54f2cr6aer3syhjhwl` (`coupon_code_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+
+#Discount Entity
+CREATE TABLE `discount_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `coupon_code_id` int(11) DEFAULT NULL,
+  `discount_amount` double DEFAULT NULL,
+  `discount_percent` double DEFAULT NULL,
+  `discount_type` varchar(255) DEFAULT NULL,
+  `discount_upon` double DEFAULT NULL,
+  `transaction_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK3kp0ej3d4v00qvy7ejqmbfs24` (`transaction_id`),
+  CONSTRAINT `FK3kp0ej3d4v00qvy7ejqmbfs24` FOREIGN KEY (`transaction_id`) REFERENCES `transactions_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+#File Entity
+CREATE TABLE `file_types` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `caption` varchar(255) DEFAULT NULL,
+  `property_id` int(11) DEFAULT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK2add3ufx0qw4yjbsa2f3mktjx` (`property_id`),
+  KEY `FK7xq43x64a0hheav581xcn1drt` (`room_id`),
+  CONSTRAINT `FK2add3ufx0qw4yjbsa2f3mktjx` FOREIGN KEY (`property_id`) REFERENCES `property_entity` (`id`),
+  CONSTRAINT `FK7xq43x64a0hheav581xcn1drt` FOREIGN KEY (`room_id`) REFERENCES `room_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+#Near By Places Entity
+CREATE TABLE `near_by_places` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `display_time` varchar(255) DEFAULT NULL,
+  `place_name` varchar(255) DEFAULT NULL,
+  `property_id` int(11) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKh4n2bxh8cciv7plehwjfdg1t8` (`property_id`),
+  CONSTRAINT `FKh4n2bxh8cciv7plehwjfdg1t8` FOREIGN KEY (`property_id`) REFERENCES `property_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+#Property Entity
+CREATE TABLE `property_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `about_property` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `is_feature_flag` bit(1) DEFAULT b'1',
+  `property_gender_type` varchar(255) DEFAULT NULL,
+  `property_name` varchar(255) DEFAULT NULL,
+  `property_type` varchar(255) DEFAULT NULL,
+  `address_id` int(11) DEFAULT NULL,
+  `is_active` bit(1) DEFAULT b'1',
+  `amenity_ids` varchar(255) DEFAULT NULL,
+  `disc_percentage` double DEFAULT NULL,
+  `start_amount` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKsjbdgmjbxr77db268907c61nr` (`address_id`),
+  CONSTRAINT `FKsjbdgmjbxr77db268907c61nr` FOREIGN KEY (`address_id`) REFERENCES `address_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+#Razor Order Entity
+CREATE TABLE `razor_orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `amount` int(11) DEFAULT NULL,
+  `amount_due` int(11) DEFAULT NULL,
+  `amount_paid` int(11) DEFAULT NULL,
+  `attempts` int(11) DEFAULT NULL,
+  `currency` varchar(255) DEFAULT NULL,
+  `entity` varchar(255) DEFAULT NULL,
+  `notes` varchar(255) DEFAULT NULL,
+  `razor_offer_id` varchar(255) DEFAULT NULL,
+  `razor_order_created_at` varchar(255) DEFAULT NULL,
+  `razor_order_id` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `transaction_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+#Room Amenities Mapper
+CREATE TABLE `room_amenities_mapper` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `amenity_description` varchar(255) DEFAULT NULL,
+  `amenity_mapping_status` bit(1) DEFAULT b'0',
+  `master_room_amenity_id` int(11) DEFAULT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `category` varchar(255) DEFAULT NULL,
+  `sub_category` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKc7hct7wwogbvx8hwn44hmnpbh` (`room_id`),
+  CONSTRAINT `FKc7hct7wwogbvx8hwn44hmnpbh` FOREIGN KEY (`room_id`) REFERENCES `room_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+#Room Amenity Master
+CREATE TABLE `room_amenity_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `master_amenity_description` varchar(255) DEFAULT NULL,
+  `master_amenity_icon_url` varchar(255) DEFAULT NULL,
+  `master_amenity_name` varchar(255) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `category` varchar(255) DEFAULT NULL,
+  `sub_category` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+#Room Entity
+CREATE TABLE `room_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `availability_status` bit(1) DEFAULT b'1',
+  `equipments` varchar(255) DEFAULT NULL,
+  `is_active` bit(1) DEFAULT b'1',
+  `max_no_of_guests` int(11) DEFAULT NULL,
+  `no_of_beds` int(11) DEFAULT NULL,
+  `property_id` int(11) DEFAULT NULL,
+  `room_type_name` varchar(255) DEFAULT NULL,
+  `services` varchar(255) DEFAULT NULL,
+  `sharing_status` varchar(255) DEFAULT NULL,
+  `start_amount` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKgywfgc9k3x2qbmngpjs7ikuu6` (`property_id`),
+  CONSTRAINT `FKgywfgc9k3x2qbmngpjs7ikuu6` FOREIGN KEY (`property_id`) REFERENCES `property_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+#Room Variant
+CREATE TABLE `room_variant` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `amount` double DEFAULT NULL,
+  `availability_status` bit(1) DEFAULT b'1',
+  `room_id` int(11) DEFAULT NULL,
+  `room_variant_type` varchar(255) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `FKc1hesldlgi3gnwmgj6tg3kbov` (`room_id`),
+  CONSTRAINT `FKc1hesldlgi3gnwmgj6tg3kbov` FOREIGN KEY (`room_id`) REFERENCES `room_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+#Scheduled Visits Entity
+CREATE TABLE `scheduled_visits` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `contact_no` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `property_id` int(11) DEFAULT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `room_variant_id` int(11) DEFAULT NULL,
+  `visiting_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+#Taxes Entity
+CREATE TABLE `taxes_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tax_amount` double DEFAULT NULL,
+  `tax_name` varchar(255) DEFAULT NULL,
+  `tax_percent` double DEFAULT NULL,
+  `tax_upon` double DEFAULT NULL,
+  `transaction_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK9kt689muhxlsxdq1j09kkq7qg` (`transaction_id`),
+  CONSTRAINT `FK9kt689muhxlsxdq1j09kkq7qg` FOREIGN KEY (`transaction_id`) REFERENCES `transactions_entity` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+#Transaction Entity
+CREATE TABLE `transactions_entity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `net_total_amount` double DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `room_amount` double DEFAULT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `room_variant_id` int(11) DEFAULT NULL,
+  `sub_total` double DEFAULT NULL,
+  `sub_total_after_discount` double DEFAULT NULL,
+  `total_discount_amount` double DEFAULT NULL,
+  `total_tax_amount` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
