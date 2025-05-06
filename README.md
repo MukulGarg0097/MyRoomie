@@ -65,7 +65,9 @@ API documentation is available via **Postman**. You can import the Postman colle
 
 # If using Gradle
 ./gradlew bootRun
+'''
 
+---
 
 ## 👤 Author
 
