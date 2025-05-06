@@ -65,3 +65,10 @@ API documentation is available via **Postman**. You can import the Postman colle
 
 # If using Gradle
 ./gradlew bootRun
+
+
+## 👤 Author
+
+**Mukul Garg**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mukulgarg0097/)  | [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/MukulGarg0097/)
+
