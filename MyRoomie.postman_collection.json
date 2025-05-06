@@ -1,0 +1,2893 @@
+{
+	"info": {
+		"_postman_id": "15f401d1-c2b3-42f7-aa35-fba9cd82e3bb",
+		"name": "MyRoomie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6664275"
+	},
+	"item": [
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/addressAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"addressAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"flatNo\":\"basement\",\n\t\"houseNo\":\"C758\",\n\t\"lattitude\":\"76.4545\",\n\t\"longitude\":\"28.1515\",\n\t\"city\":\"gurgaon\",\n\t\"state\": \"haryana\",\n\t\"country\":\"India\",\n\t\"pincode\":\"122001\",\n\t\"landmark\":\"near vyapar kendra\",\n\t\"locality\":\"sushant lok 1\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/address/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"flatNo\":\"basement\",\n\t\"houseNo\":\"C758\",\n\t\"lattitude\":\"76.4545\",\n\t\"longitude\":\"28.1515\",\n\t\"city\":\"gurgaon\",\n\t\"state\": \"haryana\",\n\t\"country\":\"India\",\n\t\"pincode\":\"122001\",\n\t\"landmark\":\"near vyapar kendra\",\n\t\"locality\":\"sushant lok 1\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/address/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By City",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/city?city=gurgaon",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"city"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "gurgaon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/state?state=haryana",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"state"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "haryana"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/country?country=India",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"country"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "India"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Lat and Long",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/latLong?lattitude=76.4545&longitude=28.1515",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"latLong"
+							],
+							"query": [
+								{
+									"key": "lattitude",
+									"value": "76.4545"
+								},
+								{
+									"key": "longitude",
+									"value": "28.1515"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Pincode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/address/pincode?pincode=122001",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"pincode"
+							],
+							"query": [
+								{
+									"key": "pincode",
+									"value": "122001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/address/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"address",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request Call Back",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/requestCallBack/requestCallBackAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"requestCallBack",
+								"requestCallBackAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"name\",\n\t\"mobileNo\":\"897456123\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/requestCallBack/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"requestCallBack",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"name\",\n\t\"mobileNo\":\"7894561213\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/requestCallBack/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"requestCallBack",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/requestCallBack/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"requestCallBack",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/requestCallBack/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"requestCallBack",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Near By Places",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/nearByPlaces/nearByPlacesAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"nearByPlaces",
+								"nearByPlacesAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/nearByPlaces/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"nearByPlaces",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"placeName\":\"DU\",\n\t\"displayTime\":\"10:10:10\",\n\t\"propertyId\": 1,\n\t\"type\":\"College\"\n\n}"
+						},
+						"url": {
+							"raw": "{{host}}/nearByPlaces/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"nearByPlaces",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 1,\n        \"created\": \"2019-04-19 18:51:03\",\n        \"updated\": \"2019-04-19 18:51:03\",\n        \"placeName\": \"DU\",\n        \"displayTime\": \"10:10:10\",\n        \"type\": \"College\",\n        \"propertyId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{host}}/nearByPlaces/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"nearByPlaces",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/nearByPlaces/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"nearByPlaces",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Srearch API",
+			"item": [
+				{
+					"name": "Get By String",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/search/searchByString?search=Gurgaon&latitude=28.3174063&longitude=76.915892",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"search",
+								"searchByString"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Gurgaon"
+								},
+								{
+									"key": "latitude",
+									"value": "28.3174063"
+								},
+								{
+									"key": "longitude",
+									"value": "76.915892"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Properties",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"latitude\": 28.7017819,\n\t\"longitude\": 77.22321749999992,\n\t\"name\": \"Mahajan Realstate\",\n\t\"displayName\": \"Mahajan Realstate \\n 1999 1999 B 206 Timarpur Marg North Delhi Delhi India 110054\",\t\n\t\"type\": \"property\",\n\t\"address\": \"1999 1999 B 206 Timarpur Marg North Delhi Delhi India 110054\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/search/getProperty",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"search",
+								"getProperty"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/room/roomAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"roomAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Active",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/room/roomAllActive",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"roomAllActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 1,\n        \"created\": \"2019-03-26T06:19:29.000+0000\",\n        \"updated\": \"2019-03-26T06:19:30.000+0000\",\n        \"roomTypeName\": \"Classic Room\",\n        \"startAmount\": 1500,\n        \"availabilityStatus\": true,\n        \"isActive\": true,\n        \"propertyId\":1,\n        \"noOfBeds\": 3,\n        \"maxNoOfGuests\": 3,\n        \"sharingStatus\": \"Single\",\n        \"services\": [\n            \"Wifi\",\n            \"Laundry\"\n        ],\n        \"equipments\": [\n            \"Tv\",\n            \"Ac\",\n            \"Fridge\"\n        ],\n        \"roomVariants\": [\n            {\n                \"id\": 3,\n                \"roomVariantType\": \"Triple\",\n                \"amount\": 2000,\n                \"availabilityStatus\": true\n            },\n            {\n                \"id\": 2,\n                \"roomVariantType\": \"Double\",\n                \"amount\": 1500,\n                \"availabilityStatus\": true\n            },\n            {\n                \"id\": 1,\n                \"roomVariantType\": \"Single\",\n                \"amount\": 2000,\n                \"availabilityStatus\": true\n            }\n        ],\n        \"roomImagesUrl\": [\n            {\n                \"id\": 4,\n                \"created\": \"2019-03-26T06:19:29.000+0000\",\n                \"updated\": \"2019-03-26T06:19:30.000+0000\",\n                \"url\": \"roomimages2.com\",\n                \"type\": null,\n                \"caption\": null\n            },\n            {\n                \"id\": 3,\n                \"created\": \"2019-03-26T06:19:29.000+0000\",\n                \"updated\": \"2019-03-26T06:19:30.000+0000\",\n                \"url\": \"roomimages.com\",\n                \"type\": null,\n                \"caption\": null\n            }\n        ],\n        \"roomAmenities\": [\n            {\n                \"id\": 2,\n                \"amenityDescription\": \"Wifi with speed 100Mb/s\",\n                \"amenityMappingStatus\": true,\n                \"masterRoomAmenityId\": 1,\n                \"masterRoomAmenity\": {\n                    \"id\": 1,\n                    \"masterAmenityName\": \"amenity name\",\n                    \"masterAmenityDescription\": \"master desc\",\n                    \"masterAmenityIconUrl\": \"amenity icon\"\n                }\n            },\n            {\n                \"id\": 1,\n                \"amenityDescription\": \"Wifi with speed 100Mb/s\",\n                \"amenityMappingStatus\": true,\n                \"masterRoomAmenityId\": 1,\n                \"masterRoomAmenity\": {\n                    \"id\": 1,\n                    \"masterAmenityName\": \"amenity name\",\n                    \"masterAmenityDescription\": \"master desc\",\n                    \"masterAmenityIconUrl\": \"amenity icon\"\n                }\n            }\n        ],\n        \"charges\": [\n            {\n                \"id\": 1,\n                \"chargeName\": \"AC Bill\",\n                \"description\": \"To be paid by visitor\",\n                \"chargeAmount\": 100\n            },\n            {\n                \"id\": 2,\n                \"chargeName\": \"Electricity Bill\",\n                \"description\": \"To be paid by visitor\",\n                \"chargeAmount\": 100\n            }\n        ]\n    }"
+						},
+						"url": {
+							"raw": "{{host}}/room/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"roomTypeName\": \"Classic Room\",\n        \"propertyId\":1,\n        \"startAmount\": 1500,\n        \"availabilityStatus\": true,\n        \"noOfBeds\": 3,\n        \"maxNoOfGuests\": 3,\n        \"sharingStatus\": \"Single\",\n        \"isActive\": true,\n        \"services\": [\n            \"Wifi\",\n            \"Laundry\"\n        ],\n        \"equipments\": [\n            \"Tv\",\n            \"Ac\",\n            \"Fridge\"\n        ],\n        \"roomVariants\": [\n            {\n                \"roomVariantType\": \"Triple\",\n                \"amount\": 2000,\n                \"availabilityStatus\": true\n            },\n            {\n                \"roomVariantType\": \"Double\",\n                \"amount\": 1500,\n                \"availabilityStatus\": true\n            },\n            {\n                \"roomVariantType\": \"Single\",\n                \"amount\": 2000,\n                \"availabilityStatus\": true\n            }\n        ],\n        \"roomImagesUrl\": [\n            {\n                \"url\": \"roomimages2.com\",\n                \"type\": null,\n                \"caption\": null\n            },\n            {\n                \"url\": \"roomimages.com\",\n                \"type\": null,\n                \"caption\": null\n            }\n        ],\n        \"roomAmenities\": [\n            {\n                \"amenityDescription\": \"Wifi with speed 100Mb/s\",\n                \"amenityMappingStatus\": true,\n                \"masterRoomAmenityId\": 1,\n                \"category\": \"category\",\n\t\t\t    \"subCategory\": \"subcategory\"\n            },\n            {\n                \"amenityDescription\": \"Wifi with speed 100Mb/s\",\n                \"amenityMappingStatus\": true,\n                \"masterRoomAmenityId\": 1,\n                \"category\": \"category\",\n        \t\t\"subCategory\": \"subcategory\"\n            }\n        ],\n        \"charges\": [\n            {\n                \"chargeName\": \"AC Bill\",\n                \"description\": \"To be paid by visitor\",\n                \"chargeAmount\": 100\n            },\n            {\n                \"chargeName\": \"Electricity Bill\",\n                \"description\": \"To be paid by visitor\",\n                \"chargeAmount\": 100\n            }\n        ]\n    }"
+						},
+						"url": {
+							"raw": "{{host}}/room/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/room/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Availability Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/room/availabilityStatus?availabilityStatus=true",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"availabilityStatus"
+							],
+							"query": [
+								{
+									"key": "availabilityStatus",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Start Amount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/room/startAmount?startAmount=1500",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"startAmount"
+							],
+							"query": [
+								{
+									"key": "startAmount",
+									"value": "1500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Max No of Guests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/room/maxNoOfGuests?maxNoOfGuests=3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"maxNoOfGuests"
+							],
+							"query": [
+								{
+									"key": "maxNoOfGuests",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By No of Beds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/room/noOfBeds?noOfBeds=3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"noOfBeds"
+							],
+							"query": [
+								{
+									"key": "noOfBeds",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/room/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"room",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Charges",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/charges/chargesAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"charges",
+								"chargesAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"chargeName\": \"AC Bill\",\n     \"description\": \"To be paid by visitor\",\n     \"chargeAmount\": 100,\n     \"roomId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{host}}/charges/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"charges",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"id\": 1,\n\t \"email\": \"helloworld@gmail.com\",\n     \"password\": \"helloworld\",\n     \"firstName\": \"hello\",\n     \"lastName\": \"world\",\n     \"contactNo\": 9876543,\n     \"altContactNo\": 9876543,\n     \"address\":{\n\t\t\"flatNo\":\"basement\",\n\t\t\"houseNo\":\"C758\",\n\t\t\"lattitude\":\"76.4545\",\n\t\t\"longitude\":\"28.1515\",\n\t\t\"city\":\"gurgaon\",\n\t\t\"state\": \"haryana\",\n\t\t\"country\":\"India\",\n\t\t\"pincode\":\"122001\",\n\t\t\"landmark\":\"near vyapar kendra\",\n\t\t\"locality\":\"sushant lok 1\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{host}}/charges/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"charges",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/charges/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"charges",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/charges/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"charges",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scheduled Visits",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/scheduledVisits/scheduledVisitsAll?page=0&size=2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"scheduledVisits",
+								"scheduledVisitsAll"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"name\": \"Hello World\",\n     \"email\": \"helloworld@gmail.com\",\n     \"contactNo\": \"9876543210\",\n     \"visitingDate\": \"2019-03-27 10:10:10\",\n     \"propertyId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{host}}/scheduledVisits/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"scheduledVisits",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"id\": 1,\n\t \"name\": \"Hello World\",\n     \"email\": \"helloworld@gmail.com\",\n     \"contactNo\": 9876543,\n     \"visitingDate\": \"2019-03-27\",\n     \"propertyId\": 1,\n     \"roomId\": 1,\n     \"roomVariantId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{host}}/scheduledVisits/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"scheduledVisits",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/scheduledVisits/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"scheduledVisits",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/scheduledVisits/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"scheduledVisits",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/transactions/transactionsAll?page=0&size=10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transactions",
+								"transactionsAll"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"roomId\":1,\n\t\"roomVariantId\":1,\n     \"propertyId\": 1,\n     \"amount\": 1500,\n     \"quantity\": 1,\n     \"subTotal\": 1500,\n     \"totalDiscountAmount\": 150,\n     \"subTotalAfterDiscount\": 1350,\n     \"totalTaxAmount\": 270,\n     \"netTotalAmount\": 1620,\n     \"discounts\": [{\n     \t\"discountAmount\": 150,\n     \t\"discountPercent\": 10,\n     \t\"discountUpon\": 1500,\n     \t\"discountType\": \"CouponCode\",\n     \t\"couponCodeId\": 1\n     }],\n     \"taxes\": [{\n     \t\"taxName\": \"CGST\",\n     \t\"taxAmount\": 135,\n     \t\"taxPercent\": 9,\n     \t\"taxUpon\": 1500\n     },\n     {\n     \t\"taxName\": \"SGST\",\n     \t\"taxAmount\": 135,\n     \t\"taxPercent\": 9,\n     \t\"taxUpon\": 1500\n     }]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/transactions/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transactions",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"id\": 3,\n     \"roomVariantId\": 1,\n     \"roomId\": 1,\n     \"roomAmount\": 1500,\n     \"quantity\": 1,\n     \"subTotal\": 1500,\n     \"totalDiscountAmount\": 150,\n     \"subTotalAfterDiscount\": 1350,\n     \"totalTaxAmount\": 270,\n     \"netTotalAmount\": 1620,\n     \"discounts\": [{\n     \t\"id\": 3,\n     \t\"discountAmount\": 150,\n     \t\"discountPercent\": 10,\n     \t\"discountUpon\": 1500,\n     \t\"discountType\": \"CouponCode\",\n     \t\"couponCodeId\": 1\n     }],\n     \"taxes\": [{\n     \t\"id\": 3,\n     \t\"taxName\": \"CGST\",\n     \t\"taxAmount\": 135,\n     \t\"taxPercent\": 9,\n     \t\"taxUpon\": 1500\n     },\n     {\n     \t\"id\": 4,\n     \t\"taxName\": \"SGST\",\n     \t\"taxAmount\": 135,\n     \t\"taxPercent\": 9,\n     \t\"taxUpon\": 1500\n     }]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/transactions/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transactions",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/transactions/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/transactions/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Property Transactions",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/propertyTransactions/transactionsAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"propertyTransactions",
+								"transactionsAll"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"propertyId\": 1,\n     \"createdByName\":\"name\",\n     \"createdByEmail\":\"email@gmail.com\",\n     \"contactNo\":\"987645321\",\n     \"date\":\"2019-05-01\",\n     \"amount\": 1500,\n     \"quantity\": 1,\n     \"subTotal\": 1500,\n     \"totalDiscountAmount\": 150,\n     \"subTotalAfterDiscount\": 1350,\n     \"totalTaxAmount\": 270,\n     \"netTotalAmount\": 1620,\n     \"discounts\": [{\n     \t\"discountAmount\": 150,\n     \t\"discountPercent\": 10,\n     \t\"discountUpon\": 1500,\n     \t\"discountType\": \"CouponCode\",\n     \t\"couponCodeId\": 1\n     }],\n     \"taxes\": [{\n     \t\"taxName\": \"CGST\",\n     \t\"taxAmount\": 135,\n     \t\"taxPercent\": 9,\n     \t\"taxUpon\": 1500\n     },\n     {\n     \t\"taxName\": \"SGST\",\n     \t\"taxAmount\": 135,\n     \t\"taxPercent\": 9,\n     \t\"taxUpon\": 1500\n     }]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/propertyTransactions/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"propertyTransactions",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transaction Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"razorpay_order_id\":\"order_CPV7McFQ46yXPl\",\n\t\"razorpay_payment_id\":\"paymentId\",\n\t\"razorpay_signature\":\"signature\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/propertyTransactions/transactionSuccess",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"propertyTransactions",
+								"transactionSuccess"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"id\": 3,\n     \"roomVariantId\": 1,\n     \"roomId\": 1,\n     \"roomAmount\": 1500,\n     \"quantity\": 1,\n     \"subTotal\": 1500,\n     \"totalDiscountAmount\": 150,\n     \"subTotalAfterDiscount\": 1350,\n     \"totalTaxAmount\": 270,\n     \"netTotalAmount\": 1620,\n     \"discounts\": [{\n     \t\"id\": 3,\n     \t\"discountAmount\": 150,\n     \t\"discountPercent\": 10,\n     \t\"discountUpon\": 1500,\n     \t\"discountType\": \"CouponCode\",\n     \t\"couponCodeId\": 1\n     }],\n     \"taxes\": [{\n     \t\"id\": 3,\n     \t\"taxName\": \"CGST\",\n     \t\"taxAmount\": 135,\n     \t\"taxPercent\": 9,\n     \t\"taxUpon\": 1500\n     },\n     {\n     \t\"id\": 4,\n     \t\"taxName\": \"SGST\",\n     \t\"taxAmount\": 135,\n     \t\"taxPercent\": 9,\n     \t\"taxUpon\": 1500\n     }]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/propertyTransactions/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"propertyTransactions",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/propertyTransactions/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"propertyTransactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/propertyTransactions/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"propertyTransactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Contact Us",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/contactUs/contactUsAll?page=0&size=10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"contactUs",
+								"contactUsAll"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\"  : \"hello@gmail.com\",\n     \"name\"   : \"hello\",\n     \"message\": \"Test on local server\"\n}\n"
+						},
+						"url": {
+							"raw": "{{host}}/contactUs/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"contactUs",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\"     : 1,\n\t\"created\": \"2019-04-08 12:25:34\",\n\t\"updated\": \"2019-04-08 12:25:34\",\n\t\"email\"  : \"hello@gmail.com\",\n\t\"name\"   : \"hello\",\n\t\"message\": \"Test on local server\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/contactUs/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"contactUs",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/contactUs/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"contactUs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/contactUs/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"contactUs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "File Controller",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/fileType/fileAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"fileType",
+								"fileAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"url\": \"images2.com\",\n     \"type\": null,\n     \"caption\": null,\n     \"propertyId\": 1,\n\t \"roomId\": null\n}"
+						},
+						"url": {
+							"raw": "{{host}}/fileType/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"fileType",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"id\": 1,\n\t \"url\": \"images2.com\",\n     \"type\": null,\n     \"caption\": \"caption\",\n     \"propertyId\": 1,\n\t \"roomId\": null\n}"
+						},
+						"url": {
+							"raw": "{{host}}/fileType/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"fileType",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/fileType/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"fileType",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/fileType/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"fileType",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single File Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/file/singleUpload",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file",
+								"singleUpload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multiple Files Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/file/multipleUploads",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file",
+								"multipleUploads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete File",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"images\": [\n\t \t \"http://res.cloudinary.com/mukulgarg8000/image/upload/v1553771837/samples/APPNWEB/ubuntu_gray_black_circle_logo_symbol_33031_1920x1080.jpg\",\n        \"http://res.cloudinary.com/mukulgarg8000/image/upload/v1553770718/samples/APPNWEB/DSC100050234.jpg\"\n\t ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/file/all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get FIle",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/file/all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coupon Code",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/couponCode/couponCodeAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"couponCode",
+								"couponCodeAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Active",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/couponCode/couponCodeAllActive",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"couponCode",
+								"couponCodeAllActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/couponCode/couponCodeName?couponCodeName=First20&roomId=1&roomVariantId=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"couponCode",
+								"couponCodeName"
+							],
+							"query": [
+								{
+									"key": "couponCodeName",
+									"value": "First20"
+								},
+								{
+									"key": "roomId",
+									"value": "1"
+								},
+								{
+									"key": "roomVariantId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"couponCodeName\": \"FIrst20\",\n     \"isActive\": true,\n     \"expiryDate\": \"2019-03-26 08:44:52\",\n     \"startDate\": \"2019-03-26 08:44:52\",\n\t \"discountPercentage\": 10\n}"
+						},
+						"url": {
+							"raw": "{{host}}/couponCode/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"couponCode",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"id\": 1,\n\t \"couponCodeName\": \"First20\",\n     \"isActive\": true,\n\t \"expiryDate\": \"2019-03-26 08:44:52\",\n     \"startDate\": \"2019-03-26 08:44:52\",\n\t \"discountPercentage\": 10\n}"
+						},
+						"url": {
+							"raw": "{{host}}/couponCode/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"couponCode",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/couponCode/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"couponCode",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/couponCode/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"couponCode",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room Variant",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/roomVariant/roomVariantAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomVariant",
+								"roomVariantAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"roomVariantType\": \"Single\",\n\t\"amount\": 2000,\n\t\"availabilityStatus\": true,\n\t\"roomId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{host}}/fileType/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"fileType",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"roomVariantType\": \"Single\",\n\t\"amount\": 2000,\n\t\"availabilityStatus\": true,\n\t\"roomId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{host}}/fileType/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"fileType",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/roomVariant/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomVariant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/roomVariant/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomVariant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Master Room Ammenity",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/roomAmenity/roomAmenityAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenity",
+								"roomAmenityAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"masterAmenityName\": \"Amenity Name\",\n    \"masterAmenityDescription\": \"Amenity Desc\",\n\t\"masterAmenityIconUrl\": \"Amenity Icon\",\n\t\"category\": \"cat\",\n\t\"subCategory\": \"subCat\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/roomAmenity/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenity",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 4,\n    \"masterAmenityName\": \"Amenity Name\",\n\t\"masterAmenityDescription\": \"Amenity Desc\",\n    \"masterAmenityIconUrl\": \"Amenity Icon\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/roomAmenity/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenity",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/roomAmenity/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenity",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/roomAmenity/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenity",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room Ammenity Mapper",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/roomAmenityMapper/roomAmenityMapperAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenityMapper",
+								"roomAmenityMapperAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amenityDescription\": \"Wifi with speed 100Mb/s\",\n\t\"amenityMappingStatus\": true,\n\t\"masterRoomAmenityId\": 1,\n\t\"roomId\": 1,\n\t\"category\": \"category\",\n\t\"subCategory\": \"subcategory\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/roomAmenityMapper/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenityMapper",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"amenityDescription\": \"Wifi with speed 100Mb/s\",\n\t\"amenityMappingStatus\": true,\n\t\"masterRoomAmenityId\": 1,\n\t\"roomId\": 1,\n\t\"category\": \"category\",\n\t\"subCategory\": \"subcategory\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/roomAmenityMapper/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenityMapper",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/roomAmenityMapper/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenityMapper",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/roomAmenityMapper/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roomAmenityMapper",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/propertyAll",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"propertyAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All By Features",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/isFeatured?isFeatureFlag=true",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"isFeatured"
+							],
+							"query": [
+								{
+									"key": "isFeatureFlag",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Active",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/propertyAllActive",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"propertyAllActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"propertyName\":\"Mera Pg\",\n\t\"aboutProperty\":\"Classic\",\n\t\"propertyGenderType\":\"Male\",\n\t\"isFeatureFlag\":true,\n\t\"propertyType\":\"Pg\",\n\t\"isActive\": true,\n\t\"city\":\"gurgaon\",\n\t\"startAmount\": 20000,\n\t\"discPercentage\": 15,\n\t\"amenityIds\": [1,2,3,4,5],\n\t\"propertyImagesUrl\":[\n\t\t{\n\t\t\t\"url\" : \"images.com\",\n\t\t\t\"type\": null,\n\t\t\t\"caption\": null,\n\t\t\t\"propertyId\": 1\n\t\t},\n\t\t{\n\t\t\t\"url\" : \"images2.com\",\n\t\t\t\"type\": null,\n\t\t\t\"caption\": null,\n\t\t\t\"propertyId\": 1\n\t\t\t\n\t\t}\n\t\t],\n\t\"address\": {\n\t\t\"flatNo\":\"basement\",\n\t\t\"houseNo\":\"C758\",\n\t\t\"latitude\":\"76.4545\",\n\t\t\"longitude\":\"28.1515\",\n\t\t\"city\":\"gurgaon\",\n\t\t\"state\": \"haryana\",\n\t\t\"country\":\"India\",\n\t\t\"pincode\":\"122001\",\n\t\t\"landmark\":\"near vyapar kendra\",\n\t\t\"locality\":\"sushant lok 1\"\n\t},\n\t\"rooms\":[{\n\t\t\"roomTypeName\":\"Classic Room\",\n\t\t\"startAmount\":1500,\n\t\t\"availabilityStatus\":true,\n\t\t\"noOfBeds\":3,\n\t\t\"maxNoOfGuests\":3,\n\t\t\"sharingStatus\":\"Single\",\n\t\t\"services\":[\"Wifi\",\"Laundry\"],\n\t\t\"equipments\":[\"Tv\",\"Ac\",\"Fridge\"],\n\t\t\"roomImagesUrl\":[\n\t\t{\n\t\t\t\"url\" : \"roomimages.com\",\n\t\t\t\"type\": null,\n\t\t\t\"caption\": null,\n\t\t\t\"roomId\": 1\n\t\t},\n\t\t{\n\t\t\t\"url\" : \"roomimages2.com\",\n\t\t\t\"type\": null,\n\t\t\t\"caption\": null,\n\t\t\t\"roomId\": 1\n\t\t}\n\t\t\t],\n\t\t\"charges\" : [{\n\t\t\t\"chargeName\":\"Electricity Bill\",\n\t\t\t\"description\":\"To be paid by visitor\",\n\t\t\t\"chargeAmount\":100\n\t\t},\n\t\t{\n\t\t\t\"chargeName\":\"AC Bill\",\n\t\t\t\"description\":\"To be paid by visitor\",\n\t\t\t\"chargeAmount\":100\n\t\t}\n\t\t],\n\t\t\"roomVariants\": [\n                    {\n                        \"roomVariantType\": \"Single\",\n                        \"amount\": 2000,\n                        \"availabilityStatus\": true\n                    },\n                    {\n                        \"roomVariantType\": \"Double\",\n                        \"amount\": 1500,\n                        \"availabilityStatus\": true\n                    },\n                    {\n                    \t\n                        \"roomVariantType\": \"Triple\",\n                        \"amount\": 2000,\n                        \"availabilityStatus\": true\n                    }\n                ],\n        \"roomAmenities\":\n\t\t\t[{\n\t\t\t\t\"amenityDescription\":\"Wifi with speed 100Mb/s\",\n\t\t\t\t\"amenityMappingStatus\":true,\n\t\t\t\t\"masterRoomAmenityId\": 1,\n\t\t\t\t\"category\": \"category\",\n        \t\t\"subCategory\": \"subcategory\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"amenityDescription\":\"Wifi with speed 100Mb/s\",\n\t\t\t\t\"amenityMappingStatus\":true,\n\t\t\t\t\"masterRoomAmenityId\": 1,\n\t\t\t\t\"category\": \"category\",\n        \t\t\"subCategory\": \"subcategory\"\n\t\t\t}]\n                \n\t\t}\n\t]\n}\n"
+						},
+						"url": {
+							"raw": "{{host}}/property/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"city\":\"gurga\",\n\t \"isActive\":true,\n\t \"isFeatureFlag\":false\n\t \n}\n"
+						},
+						"url": {
+							"raw": "{{host}}/property/find",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"find"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 1,\n        \"created\": \"2019-03-26 11:49:29\",\n        \"updated\": \"2019-03-26 11:49:30\",\n        \"propertyName\": \"Mera Pg\",\n        \"aboutProperty\": \"Classic\",\n        \"propertyGenderType\": \"Male\",\n        \"isFeatureFlag\": true,\n        \"propertyType\": \"Pg\",\n        \"city\": \"gurgaon\",\n        \"addressId\": 1,\n        \"isActive\": true,\n        \"propertyImagesUrl\": null,\n        \"rooms\": [\n            {\n                \"id\": 3,\n                \"created\": \"2019-03-26 12:03:50\",\n                \"updated\": \"2019-03-26 12:03:50\",\n                \"roomTypeName\": \"Classic Room\",\n                \"startAmount\": 1500,\n                \"availabilityStatus\": true,\n                \"noOfBeds\": 3,\n                \"maxNoOfGuests\": 3,\n                \"sharingStatus\": \"Single\",\n                \"services\": [\n                    \"Wifi\",\n                    \"Laundry\"\n                ],\n                \"equipments\": [\n                    \"Tv\",\n                    \"Ac\",\n                    \"Fridge\"\n                ],\n                \"propertyId\": 1,\n                \"isActive\": true,\n                \"roomVariants\": [\n                    {\n                        \"id\": 7,\n                        \"roomVariantType\": \"Triple\",\n                        \"amount\": 2000,\n                        \"availabilityStatus\": true,\n                        \"roomId\": 3\n                    },\n                    {\n                        \"id\": 9,\n                        \"roomVariantType\": \"Single\",\n                        \"amount\": 2000,\n                        \"availabilityStatus\": true,\n                        \"roomId\": 3\n                    },\n                    {\n                        \"id\": 8,\n                        \"roomVariantType\": \"Double\",\n                        \"amount\": 1500,\n                        \"availabilityStatus\": true,\n                        \"roomId\": 3\n                    }\n                ],\n                \"roomImagesUrl\": [\n                    {\n                        \"id\": 9,\n                        \"created\": \"2019-03-26 12:03:50\",\n                        \"updated\": \"2019-03-26 12:03:49\",\n                        \"url\": \"roomimages.com\",\n                        \"type\": null,\n                        \"caption\": null,\n                        \"roomId\": 3\n                    },\n                    {\n                        \"id\": 10,\n                        \"created\": \"2019-03-26 12:03:50\",\n                        \"updated\": \"2019-03-26 12:03:49\",\n                        \"url\": \"roomimages2.com\",\n                        \"type\": null,\n                        \"caption\": null,\n                        \"roomId\": 3\n                    }\n                ],\n                \"roomAmenities\": [\n                    {\n                        \"id\": 5,\n                        \"amenityDescription\": \"Wifi with speed 100Mb/s\",\n                        \"amenityMappingStatus\": true,\n                        \"masterRoomAmenityId\": 1,\n                        \"roomId\": 3,\n                        \"masterRoomAmenity\": {\n                            \"id\": 1,\n                            \"masterAmenityName\": \"amenity name\",\n                            \"masterAmenityDescription\": \"master desc\",\n                            \"masterAmenityIconUrl\": \"amenity icon\"\n                        }\n                    },\n                    {\n                        \"id\": 6,\n                        \"amenityDescription\": \"Wifi with speed 100Mb/s\",\n                        \"amenityMappingStatus\": true,\n                        \"masterRoomAmenityId\": 1,\n                        \"roomId\": 3,\n                        \"masterRoomAmenity\": {\n                            \"id\": 1,\n                            \"masterAmenityName\": \"amenity name\",\n                            \"masterAmenityDescription\": \"master desc\",\n                            \"masterAmenityIconUrl\": \"amenity icon\"\n                        }\n                    }\n                ],\n                \"charges\": [\n                    {\n                        \"id\": 5,\n                        \"chargeName\": \"Electricity Bill\",\n                        \"description\": \"To be paid by visitor\",\n                        \"chargeAmount\": 100,\n                        \"roomId\": 3\n                    }\n                ]\n            }\n        ],\n        \"address\": {\n            \"id\": 1,\n            \"flatNo\": \"basement\",\n            \"houseNo\": \"C758\",\n            \"locality\": \"sushant lok 1\",\n            \"landmark\": \"near vyapar kendra\",\n            \"lattitude\": 76.4545,\n            \"longitude\": 28.1515,\n            \"city\": \"gurgaon\",\n            \"state\": \"haryana\",\n            \"country\": \"India\",\n            \"pincode\": \"122001\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{host}}/property/update?id=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By City",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/city?city=gurgaon",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"city"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "gurgaon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By City And GenderType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/PropertyGenderTypeAndCity?propertyGenderType=Male&city=gurgaon",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"PropertyGenderTypeAndCity"
+							],
+							"query": [
+								{
+									"key": "propertyGenderType",
+									"value": "Male"
+								},
+								{
+									"key": "city",
+									"value": "gurgaon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By City And PropertyType Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/city?city=gurgaon&propertyType=Pg",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"city"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "gurgaon"
+								},
+								{
+									"key": "propertyType",
+									"value": "Pg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Lat and Long",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/latLong?lattitude=76.4545&longitude=28.1515",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"latLong"
+							],
+							"query": [
+								{
+									"key": "lattitude",
+									"value": "76.4545"
+								},
+								{
+									"key": "longitude",
+									"value": "28.1515"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By propertyGenderType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/PropertyGenderType?propertyGenderType=Male",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"PropertyGenderType"
+							],
+							"query": [
+								{
+									"key": "propertyGenderType",
+									"value": "Male"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By propertyType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/property/PropertyType?propertyType=Pg",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"PropertyType"
+							],
+							"query": [
+								{
+									"key": "propertyType",
+									"value": "Pg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/property/2?delete=true",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"property",
+								"2"
+							],
+							"query": [
+								{
+									"key": "delete",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Extra",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1,\n\t\"latitude\": 76.4545,\n\t\"longitude\": 28.1515,\n\t\"name\": \"gg\",\n\t\"displayName\": \"gg \\n basement basement sushant lok 1 near vyapar kendra gurgaon haryana India 122001\",\n\t\"type\": \"property\",\n\t\"address\": \"basement basement sushant lok 1 near vyapar kendra gurgaon haryana India 122001\"\n}"
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
